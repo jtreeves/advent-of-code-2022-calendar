@@ -1,6 +1,6 @@
 function Header() {
     return (
-        <header></header>
+        <header>Advent of Code 2022</header>
     )
 }
 

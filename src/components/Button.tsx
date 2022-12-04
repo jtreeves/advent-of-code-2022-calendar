@@ -1,6 +1,20 @@
-function Button() {
+import { ButtonProps } from '../interfaces'
+
+function Button({
+    text,
+    color,
+    link
+}: ButtonProps) {
     return (
-        <button></button>
+        <a 
+            href={link}
+            target='_blank'
+            rel='noreferrer'
+        >
+            <button className={color}>
+                {text}
+            </button>
+        </a>
     )
 }
 
