@@ -32,14 +32,17 @@ function Door({
         />
 
         <Button 
-            color='red'
+            color='silver'
             text='Solution'
             link={solutionLink}
         />
     </>
 
     return (
-        <article onClick={handleClick}>
+        <article 
+            onClick={handleClick}
+            className={!open ? 'red' : 'green'}
+        >
             {!open ? closedDoor : openDoor}
         </article>
     )

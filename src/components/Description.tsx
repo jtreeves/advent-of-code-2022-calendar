@@ -1,6 +1,6 @@
 function Description(): JSX.Element {
     return (
-        <p></p>
+        <p>Personal solutions for the 2022 Advent of Code challenge. Problems solved in Python.</p>
     )
 }
 
