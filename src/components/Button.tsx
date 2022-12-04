@@ -4,7 +4,7 @@ function Button({
     text,
     color,
     link
-}: ButtonProps) {
+}: ButtonProps): JSX.Element {
     return (
         <a 
             href={link}

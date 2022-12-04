@@ -11,7 +11,7 @@ const REPO_URL = 'https://github.com/jtreeves/advent_of_code_2022_solutions/tree
 
 function Door({
     day
-}: Day) {
+}: Day): JSX.Element {
     const [open, setOpen] = useState<boolean>(false)
     const problemLink: string = ADVENT_URL + day
     const solutionLink: string = REPO_URL + day

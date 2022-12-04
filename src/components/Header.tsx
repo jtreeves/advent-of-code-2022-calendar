@@ -1,6 +1,8 @@
-function Header() {
+function Header(): JSX.Element {
     return (
-        <header>Advent of Code 2022</header>
+        <header>
+            Advent of Code 2022
+        </header>
     )
 }
 

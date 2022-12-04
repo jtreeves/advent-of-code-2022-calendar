@@ -1,4 +1,4 @@
-function Description() {
+function Description(): JSX.Element {
     return (
         <p></p>
     )
