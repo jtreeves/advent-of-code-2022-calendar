@@ -1,0 +1,6 @@
+section {
+    background-color: red;
+    color: green;
+    height: calc(100vh - 400px);
+    width: calc(100% - 200px);
+}

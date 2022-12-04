@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 import Door from './Door'
+import '../styles/calendar.css'
 
 function Calendar(): JSX.Element {
     const allDays: number[] = Array.from(new Array(25), (
