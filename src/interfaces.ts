@@ -10,8 +10,13 @@ interface Link {
     link: string
 }
 
+interface Day {
+    day: number
+}
+
 interface ButtonProps extends Color, Text, Link {}
 
 export type {
-    ButtonProps
+    ButtonProps,
+    Day
 }
