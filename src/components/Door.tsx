@@ -1,7 +1,5 @@
 import { 
     ReactElement, 
-    ReactEventHandler, 
-    useState 
 } from 'react'
 import { DoorProps } from '../interfaces'
 import Button from './Button'
@@ -14,13 +12,9 @@ function Door({
     activeDoor,
     switchDoor
 }: DoorProps): JSX.Element {
-    const [open, setOpen] = useState<boolean>(false)
+    const open: boolean = day === activeDoor
     const problemLink: string = ADVENT_URL + day
     const solutionLink: string = REPO_URL + day
-
-    const handleClick: ReactEventHandler = (): void => {
-        setOpen(!open)
-    }
 
     const closedDoor: ReactElement = <>
         {String(day)}
@@ -42,7 +36,7 @@ function Door({
 
     return (
         <article 
-            onClick={handleClick}
+            onClick={() => switchDoor(day)}
             className={!open ? 'red' : 'green'}
         >
             {!open ? closedDoor : openDoor}
