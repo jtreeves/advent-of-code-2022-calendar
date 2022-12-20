@@ -14,9 +14,20 @@ interface Day {
     day: number
 }
 
+interface ActiveDoor {
+    activeDoor: number
+}
+
+interface SwitchDoor {
+    switchDoor: (day: number) => void 
+}
+
+interface DoorProps extends Day, ActiveDoor, SwitchDoor {}
+
 interface ButtonProps extends Color, Text, Link {}
 
 export type {
     ButtonProps,
-    Day
+    Day,
+    DoorProps
 }

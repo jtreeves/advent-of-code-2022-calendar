@@ -1,8 +1,19 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState } from 'react'
 import Door from './Door'
 import '../styles/calendar.css'
 
 function Calendar(): JSX.Element {
+    const [activeDoor, setActiveDoor] = useState<number>(0)
+
+    const switchDoor = (day: number): void => {
+        const currentDate = new Date()
+        const targetDate = new Date(`December ${day}, 2022`)
+
+        if (currentDate > targetDate) {
+            setActiveDoor(day)
+        }
+    }
+
     const allDays: number[] = Array.from(new Array(25), (
         _: any,
         i: number
@@ -15,8 +26,10 @@ function Calendar(): JSX.Element {
     ): ReactElement => {
         return (
             <Door 
-                day={day}
                 key={day}
+                day={day}
+                activeDoor={activeDoor}
+                switchDoor={switchDoor}
             />
         )
     })

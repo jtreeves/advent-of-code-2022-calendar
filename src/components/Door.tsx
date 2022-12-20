@@ -3,15 +3,17 @@ import {
     ReactEventHandler, 
     useState 
 } from 'react'
-import { Day } from '../interfaces'
+import { DoorProps } from '../interfaces'
 import Button from './Button'
 
 const ADVENT_URL = 'https://adventofcode.com/2022/day/'
 const REPO_URL = 'https://github.com/jtreeves/advent_of_code_2022_solutions/tree/main/day'
 
 function Door({
-    day
-}: Day): JSX.Element {
+    day,
+    activeDoor,
+    switchDoor
+}: DoorProps): JSX.Element {
     const [open, setOpen] = useState<boolean>(false)
     const problemLink: string = ADVENT_URL + day
     const solutionLink: string = REPO_URL + day
