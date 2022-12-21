@@ -1,4 +1,5 @@
 import { ActivityProps } from '../interfaces'
+import '../styles/activity.css'
 
 function Activity({
     text,
