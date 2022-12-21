@@ -7,6 +7,7 @@ import {
 import findDayTitleName from '../utilities/findDayTitleName'
 import createDayLink from '../utilities/createDayLink'
 import Activity from './Activity'
+import TooEarlySign from './TooEarlySign'
 import '../styles/door.css'
 
 function Door({
@@ -24,17 +25,13 @@ function Door({
         {String(day)}
     </>
 
-    const tooEarlyDoor: ReactElement = <>
-        TOO EARLY!
-    </>
+    const tooEarlyDoor: ReactElement = <TooEarlySign />
 
-    const openDoor: ReactElement = <>
-        <Activity 
-            color='silver'
-            text={dayTitleName}
-            link={dayLink}
-        />
-    </>
+    const openDoor: ReactElement = <Activity 
+        color='silver'
+        text={dayTitleName}
+        link={dayLink}
+    />
 
     return (
         <article 
