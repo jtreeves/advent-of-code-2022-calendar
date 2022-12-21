@@ -6,12 +6,17 @@ import '../styles/calendar.css'
 
 function Calendar(): JSX.Element {
     const [activeDoor, setActiveDoor] = useState<number>(0)
+    const [errorDoor, setErrorDoor] = useState<number>(0)
 
     const switchDoor = (day: number): void => {
         const isNotTooEarly: boolean = determineNotTooEarly(day)
 
         if (isNotTooEarly) {
             setActiveDoor(day)
+            setErrorDoor(0)
+        } else {
+            setErrorDoor(day)
+            setActiveDoor(0)
         }
     }
 
@@ -25,6 +30,7 @@ function Calendar(): JSX.Element {
                 key={day}
                 day={day}
                 activeDoor={activeDoor}
+                errorDoor={errorDoor}
                 switchDoor={switchDoor}
             />
         )

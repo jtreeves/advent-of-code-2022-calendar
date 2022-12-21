@@ -11,15 +11,21 @@ import '../styles/door.css'
 
 function Door({
     day,
+    errorDoor,
     activeDoor,
     switchDoor
 }: DoorProps): JSX.Element {
     const open: boolean = day === activeDoor
+    const tooEarly: boolean = day === errorDoor
     const dayLink: string = createDayLink(day)
     const dayTitleName: string = findDayTitleName(day)
 
     const closedDoor: ReactElement = <>
         {String(day)}
+    </>
+
+    const tooEarlyDoor: ReactElement = <>
+        TOO EARLY!
     </>
 
     const openDoor: ReactElement = <>
@@ -35,7 +41,7 @@ function Door({
             onClick={() => switchDoor(day)}
             className={!open ? 'red' : 'green'}
         >
-            {!open ? closedDoor : openDoor}
+            {!open && !tooEarly ? closedDoor : tooEarly ? tooEarlyDoor : openDoor}
         </article>
     )
 }
