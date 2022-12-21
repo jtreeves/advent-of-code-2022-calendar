@@ -1,11 +1,10 @@
 import { 
     ReactElement, 
 } from 'react'
-import { DoorProps } from '../interfaces'
+import { DoorProps, Title } from '../interfaces'
 import Button from './Button'
-
-const ADVENT_URL = 'https://adventofcode.com/2022/day/'
-const REPO_URL = 'https://github.com/jtreeves/advent_of_code_2022_solutions/tree/main/day'
+import URL from '../data/url'
+import TITLES from '../data/titles'
 
 function Door({
     day,
@@ -13,8 +12,10 @@ function Door({
     switchDoor
 }: DoorProps): JSX.Element {
     const open: boolean = day === activeDoor
-    const problemLink: string = ADVENT_URL + day
-    const solutionLink: string = REPO_URL + day
+    const dayLink: string = URL + day
+    const dayTitle: string = TITLES.filter((title: Title): boolean => {
+        return title.day === day
+    })[0].name
 
     const closedDoor: ReactElement = <>
         {String(day)}
@@ -22,15 +23,9 @@ function Door({
 
     const openDoor: ReactElement = <>
         <Button 
-            color='blue'
-            text='Problem'
-            link={problemLink}
-        />
-
-        <Button 
             color='silver'
-            text='Solution'
-            link={solutionLink}
+            text={dayTitle}
+            link={dayLink}
         />
     </>
 
