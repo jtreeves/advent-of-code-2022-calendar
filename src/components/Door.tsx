@@ -7,6 +7,7 @@ import {
 import findDayTitleName from '../utilities/findDayTitleName'
 import createDayLink from '../utilities/createDayLink'
 import Activity from './Activity'
+import '../styles/door.css'
 
 function Door({
     day,
