@@ -1,10 +1,10 @@
-import { ButtonProps } from '../interfaces'
+import { ActivityProps } from '../interfaces'
 
-function Button({
+function Activity({
     text,
     color,
     link
-}: ButtonProps): JSX.Element {
+}: ActivityProps): JSX.Element {
     return (
         <a 
             href={link}
@@ -18,4 +18,4 @@ function Button({
     )
 }
 
-export default Button
+export default Activity

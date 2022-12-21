@@ -1,4 +1,6 @@
 import { ReactElement, useState } from 'react'
+import createAllDays from '../utilities/createAllDays'
+import determineNotTooEarly from '../utilities/determineNotTooEarly'
 import Door from './Door'
 import '../styles/calendar.css'
 
@@ -6,20 +8,14 @@ function Calendar(): JSX.Element {
     const [activeDoor, setActiveDoor] = useState<number>(0)
 
     const switchDoor = (day: number): void => {
-        const currentDate = new Date()
-        const targetDate = new Date(`December ${day}, 2022`)
+        const isNotTooEarly: boolean = determineNotTooEarly(day)
 
-        if (currentDate > targetDate) {
+        if (isNotTooEarly) {
             setActiveDoor(day)
         }
     }
 
-    const allDays: number[] = Array.from(new Array(25), (
-        _: any,
-        i: number
-    ): number => {
-        return i + 1
-    })
+    const allDays: number[] = createAllDays()
 
     const allDoors: ReactElement[] = allDays.map((
         day: number

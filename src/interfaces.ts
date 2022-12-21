@@ -30,10 +30,10 @@ interface Title extends Day, Name {}
 
 interface DoorProps extends Day, ActiveDoor, SwitchDoor {}
 
-interface ButtonProps extends Color, Text, Link {}
+interface ActivityProps extends Color, Text, Link {}
 
 export type {
-    ButtonProps,
+    ActivityProps,
     Day,
     DoorProps,
     Title

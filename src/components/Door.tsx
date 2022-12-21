@@ -1,10 +1,12 @@
 import { 
     ReactElement, 
 } from 'react'
-import { DoorProps, Title } from '../interfaces'
-import Button from './Button'
-import URL from '../data/url'
-import TITLES from '../data/titles'
+import { 
+    DoorProps
+} from '../interfaces'
+import findDayTitleName from '../utilities/findDayTitleName'
+import createDayLink from '../utilities/createDayLink'
+import Activity from './Activity'
 
 function Door({
     day,
@@ -12,19 +14,17 @@ function Door({
     switchDoor
 }: DoorProps): JSX.Element {
     const open: boolean = day === activeDoor
-    const dayLink: string = URL + day
-    const dayTitle: string = TITLES.filter((title: Title): boolean => {
-        return title.day === day
-    })[0].name
+    const dayLink: string = createDayLink(day)
+    const dayTitleName: string = findDayTitleName(day)
 
     const closedDoor: ReactElement = <>
         {String(day)}
     </>
 
     const openDoor: ReactElement = <>
-        <Button 
+        <Activity 
             color='silver'
-            text={dayTitle}
+            text={dayTitleName}
             link={dayLink}
         />
     </>
