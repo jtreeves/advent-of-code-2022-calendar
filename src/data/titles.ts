@@ -87,7 +87,7 @@ const TITLES: Title[] = [
     },
     {
         day: 22,
-        name: 'DAY 22'
+        name: 'Monkey Map'
     },
     {
         day: 23,
